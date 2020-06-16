@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <style>
+        body{
+            margin: 50px 30px;
+        }
+        p {
+            max-width: 30%;
+        }
+
+        nav a{
+            font-size: 24px;
+            display: block;
+        }
+
+        img {
+            display: block;
+            max-width: 50%;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <p>Navigation</p>
+    <a href="resources/">Resursai</a>
+    <a target="_blank" href="resources/pavyzdys-sprendimas.pdf">Pavyzdinio bilieto sprendimas</a>
+    <a target="_blank" href="resources/combinedSlides.pdf">Visos skaidrės</a>
+</nav>
+<hr>
+<h2>
+    Ryšių panaudojimas
+</h2>
+<h3>Association</h3>
+<img src="images/association.svg"/>
+<h3>Aggregation</h3>
+<p>Aggregation refers to the formation of a particular class as a result of one class being aggregated or built as a
+    collection. For example, the class “library” is made up of one or more books, among other materials. In aggregation,
+    the contained classes are not strongly dependent on the lifecycle of the container. In the same example, books will
+    remain so even when the library is dissolved.</p>
+<img src="images/aggregation.svg"/>
+<h3>Composition</h3>
+<p>That is, the contained class will be obliterated when the container class is destroyed. For example, a shoulder bag’s
+    side pocket will also cease to exist once the shoulder bag is destroyed.</p>
+<img src="images/composition.svg"/>
+<h3>Dependency</h3>
+<p>
+    Dependency is called a supplier - client relationship, where supplier provides something to the client, and thus the
+    client is in some sense incomplete while semantically or structurally dependent on the supplier element(s).
+    Modification of the supplier may impact the client elements.
+</p>
+<img src="images/dependency.svg"/>
+<h3>Generalization</h3>
+<p>A generalization is a binary taxonomic (i.e. related to classification) directed relationship between a more general
+    classifier (superclass) and a more specific classifier (subclass).</p>
+<img src="images/generalization.svg"/>
+<h3>Realization</h3>
+<p>The relationship between the interface and the implementing class</p>
+<img style="width: 10%" src="images/realization.svg"/>
+<h3>Realization vs Implementation</h3>
+<img src="images/implementation_vs_realization.png"/>
+
+<h2>Klasių atributai</h2>
+<img src="images/attribute.png"/>
+<h2>Dependency inversion</h2>
+<p>TODO:// Combined slides 173 puslapis</p>
+<h2>Kardinalumas</h2>
+<table class="small-table">
+    <tbody><tr><th class="item">Multiplicity</th><th class="item">Alternative</th><th class="descr">Cardinality</th></tr>
+    <tr><td class="item">0..0</td><td class="item">0</td><td class="descr">Collection must be empty</td></tr>
+    <tr><td class="item">0..1</td><td class="item"></td><td class="descr">No instances or one instance</td></tr>
+    <tr><td class="item">1..1</td><td class="item">1</td><td class="descr">Exactly one instance</td></tr>
+    <tr><td class="item">0..*</td><td class="item">*</td><td class="descr">Zero or more instances</td></tr>
+    <tr><td class="item">1..*</td><td class="item"></td><td class="descr">At least one instance</td></tr>
+    <tr><td class="item">5..5</td><td class="item">5</td><td class="descr">Exactly 5 instances</td></tr>
+    <tr><td class="item">m..n</td><td class="item"></td><td class="descr">At least m but no more than n instances</td></tr>
+    </tbody></table>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () =>{
+        const navigationContainer = document.getElementsByTagName('nav')[0]
+        document.querySelectorAll('h2').forEach(el => {
+            el.id = el.innerText
+            const navigationLink = document.createElement('a')
+            navigationLink.innerText =  el.innerText
+            navigationLink.href = `#${el.innerText}`
+            navigationContainer.append(navigationLink)
+        })
+    })
+</script>
+</html>
