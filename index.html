@@ -1,15 +1,15 @@
 <html>
-
 <head>
     <style>
-        body{
+        body {
             margin: 50px 30px;
         }
+
         p {
             max-width: 30%;
         }
 
-        nav a{
+        nav a {
             font-size: 24px;
             display: block;
         }
@@ -64,26 +64,63 @@
 <img src="images/attribute.png"/>
 <h2>Dependency inversion</h2>
 <p>TODO:// Combined slides 173 puslapis</p>
+<h3> Method </h3>
+<h3> Property </h3>
+<h3> Constructor </h3>
 <h2>Kardinalumas</h2>
 <table class="small-table">
-    <tbody><tr><th class="item">Multiplicity</th><th class="item">Alternative</th><th class="descr">Cardinality</th></tr>
-    <tr><td class="item">0..0</td><td class="item">0</td><td class="descr">Collection must be empty</td></tr>
-    <tr><td class="item">0..1</td><td class="item"></td><td class="descr">No instances or one instance</td></tr>
-    <tr><td class="item">1..1</td><td class="item">1</td><td class="descr">Exactly one instance</td></tr>
-    <tr><td class="item">0..*</td><td class="item">*</td><td class="descr">Zero or more instances</td></tr>
-    <tr><td class="item">1..*</td><td class="item"></td><td class="descr">At least one instance</td></tr>
-    <tr><td class="item">5..5</td><td class="item">5</td><td class="descr">Exactly 5 instances</td></tr>
-    <tr><td class="item">m..n</td><td class="item"></td><td class="descr">At least m but no more than n instances</td></tr>
-    </tbody></table>
+    <tbody>
+    <tr>
+        <th class="item">Multiplicity</th>
+        <th class="item">Alternative</th>
+        <th class="descr">Cardinality</th>
+    </tr>
+    <tr>
+        <td class="item">0..0</td>
+        <td class="item">0</td>
+        <td class="descr">Collection must be empty</td>
+    </tr>
+    <tr>
+        <td class="item">0..1</td>
+        <td class="item"></td>
+        <td class="descr">No instances or one instance</td>
+    </tr>
+    <tr>
+        <td class="item">1..1</td>
+        <td class="item">1</td>
+        <td class="descr">Exactly one instance</td>
+    </tr>
+    <tr>
+        <td class="item">0..*</td>
+        <td class="item">*</td>
+        <td class="descr">Zero or more instances</td>
+    </tr>
+    <tr>
+        <td class="item">1..*</td>
+        <td class="item"></td>
+        <td class="descr">At least one instance</td>
+    </tr>
+    <tr>
+        <td class="item">5..5</td>
+        <td class="item">5</td>
+        <td class="descr">Exactly 5 instances</td>
+    </tr>
+    <tr>
+        <td class="item">m..n</td>
+        <td class="item"></td>
+        <td class="descr">At least m but no more than n instances</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () =>{
+    document.addEventListener("DOMContentLoaded", () => {
         const navigationContainer = document.getElementsByTagName('nav')[0]
         document.querySelectorAll('h2').forEach(el => {
             el.id = el.innerText
             const navigationLink = document.createElement('a')
-            navigationLink.innerText =  el.innerText
+            navigationLink.innerText = el.innerText
             navigationLink.href = `#${el.innerText}`
             navigationContainer.append(navigationLink)
         })
