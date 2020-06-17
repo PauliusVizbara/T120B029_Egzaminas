@@ -1,5 +1,6 @@
-<html>
+<html lang="lt">
 <head>
+    <meta charset="UTF-8">
     <style>
         body {
             margin: 50px 30px;
@@ -26,7 +27,12 @@
     <a href="resources/">Resursai</a>
     <a target="_blank" href="resources/pavyzdys-sprendimas.pdf">Pavyzdinio bilieto sprendimas</a>
     <a target="_blank" href="resources/combinedSlides.pdf">Visos skaidrės</a>
+    <a target="_blank" href="resources/egzamino-klausimų-tipai.pdf">Pasiruošimas egzaminui (klausimaų tipai)</a>
+    <hr>
+
 </nav>
+
+
 <hr>
 <h2>
     Ryšių panaudojimas
@@ -63,10 +69,24 @@
 <h2>Klasių atributai</h2>
 <img src="images/attribute.png"/>
 <h2>Dependency inversion</h2>
-<p>TODO:// Combined slides 173 puslapis</p>
 <h3> Method </h3>
+<ul>
+    <li>Supply different types of IProductRepository as a
+        parameter to the getAllProduct method
+    </li>
+    <li>IProductRepository is implemented in both
+        ProductRepository and Test stub.
+    </li>
+</ul>
+<img style="width: 40%" src="images/method_injection.png"/>
 <h3> Property </h3>
+<p>The constructor replaced with a property providing
+    dependency via properties rather than the constructor</p>
+<img style="width: 40%" src="images/property_injection.png"/>
 <h3> Constructor </h3>
+<p>Move the responsibility of creating ProductRepository
+    implementation out of the ProductService class</p>
+<img style="width: 40%" src="images/constructor_injection.png"/>
 <h2>Kardinalumas</h2>
 <table class="small-table">
     <tbody>
@@ -112,6 +132,61 @@
     </tr>
     </tbody>
 </table>
+
+<h2>Projektavimo šablonai</h2>
+<h3>Singleton</h3>
+<p>Singleton UML</p>
+<img style="width: 40%" src="images/singleton.png"/>
+<p>Singleton code implementation</p>
+<pre style="background: #2b2b2b; color: white; padding: 16px; width: 40%">
+    class Singleton
+    {
+        // static variable single_instance of type Singleton
+        private static Singleton single_instance = null;
+
+        // private constructor restricted to this class itself
+        private Singleton(){}
+
+        // static method to create instance of Singleton class
+        public static Singleton getInstance()
+        {
+            if (single_instance == null)
+                single_instance = new Singleton();
+
+            return single_instance;
+        }
+    }
+</pre>
+<h3>Adapter</h3>
+<p>Adapter UML</p>
+<img style="width: 40%" src="images/adapter_uml.png"/>
+<p>Adapter code implementation</p>
+<img style="width: 40%" src="images/adapter_code.png"/>
+<h3>Null Object</h3>
+<p>Null object UML</p>
+<img style="width: 40%" src="images/null_object_uml.png"/>
+<p>Null object code implementation</p>
+<img style="width: 40%" src="images/null_object_code.png"/>
+
+<h2>OCL</h2>
+<h3>Invariant</h3>
+<p>An invariant - is a constraint that must always be
+    met by all instances of the class, type, or
+    interface. Invariants must be true all the time.</p>
+<h3>Precondition</h3>
+<p>
+    A precondition to an operation is a restriction
+    that must be true at the moment the operation is
+    going to be executed.
+</p>
+<h3>Postcondition</h3>
+<p>
+    A postcondition to an operation is a restriction
+    that must be true at the moment the operation
+    has just been executed.
+</p>
+
+
 </body>
 
 <script>
